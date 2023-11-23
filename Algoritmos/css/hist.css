@@ -2,7 +2,7 @@
 
 body {
     font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: grey;
+    margin: 0px;    
 }
 
 .container {
@@ -68,11 +68,16 @@ body {
 
 /* BANNER */
 
+html{
+    overflow-x: hidden;
+}
+
 .banner {
     height: fit-content;
     padding: 40px ;
-    background-image: url("../imgs/16069300642b8dec786a8cdf5889309995733b54d4.jpg");
+    background-image: url("../imgs/Wallpaper\ Corinthians\ SCCP.jpeg");
     background-size: cover;
+    top: 10px;
 }
 
 .banner .container {

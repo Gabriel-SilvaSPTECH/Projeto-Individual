@@ -62,18 +62,28 @@ font-weight: 500;
 }
 
 
-/* BANNER */
+/*.card */
 
-.banner {
-height: fit-content;
+html{
+    overflow-x: hidden;
+}
+
+.card {
 padding: 100px 0;
-background-image: url("../imgs/16069300642b8dec786a8cdf5889309995733b54d4.jpg");
+background-image: url("../imgs/45f90e20-b11a-406b-a127-dbd730d22e88.jpeg");
 background-size: cover;
+color: #fff;    
+width: 50%;
+margin: 0;
+padding: 0;
+width: 280px;
+font-size: 36px;
 
 }
 
-.banner .container {
-height: 400px;
+.card .container {
+height: 500px;
+width: 200px;
 font-size: 36px;
 justify-content: center;
 flex-direction: column;
@@ -83,49 +93,9 @@ margin: 50px;
 
 }
 
-.banner p {
-color: #fff;    
-width: 50%;
-margin: 0;
-padding: 0;
-width: 280px;
-font-size: 36px;
-}
-
-.banner .container span {
+.card .container span {
 font-weight: 800;
 }
-
-/* missao visao valores */
-
-.social {
-background-color: #e5e5e5;
-display: flex;
-}
-
-.social .container{
-justify-content: center;
-}
-
-.box img {
-width: 170px;
-}
-
-.social .container .boxes {
-display: flex;
-}
-
-.social p {
-text-align: center;
-}
-
-.box {
-margin: 10px;
-display: flex;
-flex-direction: column;
-align-items: center;
-}
-
 /* FOOTER */
 
 .footer {

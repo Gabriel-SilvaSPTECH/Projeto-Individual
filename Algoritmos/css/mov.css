@@ -69,6 +69,9 @@ body {
 
 
 /* BANNER */
+html{
+    overflow-x: hidden;
+}
 
 .banner {
     height: fit-content;
@@ -88,7 +91,7 @@ body {
     width: 100%;
     max-width: 100%;
     background-color: transparent;
-    padding: 34px;
+    padding: 25px;
     backdrop-filter: blur(6px);
 }
 
