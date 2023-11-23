@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nação Alvinegra | Página Inicial</title>
+
+  <link rel="icon" href="imgs/corinthians-100-logo-71E44445D2-seeklogo.com.png">
+  <link rel="stylesheet" href="./css/cadastro.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <!-- <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"> -->
+</head>
+
+<body>
+  <div class="header">
+    <div class="container">
+      <h1 class="titulo"><a href="index.html"><img id="logo" src="imgs/Corinthians_Paulista_1916-19.png" alt=""
+            width="50px">Nação Alvinegra</a> <img id="logo2" src="imgs/download.png" alt=""></h1>
+      <ul class="navbar">
+        <li class="agora">
+          <a href="index.html">Inicial</a>
+        </li>
+        <li>
+          <a href="mov.html">Movimento</a>
+        </li>
+        <li>
+          <a href="hist.html">História</a>
+        </li>
+        <li>|</li>
+        <li>
+          <a href="cadastro.html">Cadastro</a>
+        </li>
+        <li>
+          <a href="login.html">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="banner">
+    <div class="card">
+        <form id="quiz-form">
+            <p>
+                <label for="q1">Quem foi o primeiro presidente do Corinthians?</label><br>
+                <input type="radio" name="q1" value="errado"> Claudio Christóvam de Pinho<br>
+                <input type="radio" name="q1" value="errado"> Alfredo Ignácio Trindade<br>
+                <input type="radio" name="q1" value="certo"> Miguel Battaglia
+            </p>
+            <p>
+                <label for="q2">Qual foi o ano de fundação do Corinthians?</label><br>
+                <input type="radio" name="q2" value="errado"> 1912<br>
+                <input type="radio" name="q2" value="certo"> 1910<br>
+                <input type="radio" name="q2" value="errado"> 1915
+            </p>
+            <p>
+                <label for="q3">Em qual estádio o Corinthians manda seus jogos?</label><br>
+                <input type="radio" name="q3" value="certo"> Neo Química Arena<br>
+                <input type="radio" name="q3" value="errado"> Morumbi<br>
+                <input type="radio" name="q3" value="errado"> Maracanã
+            </p>
+            <p>
+                <label for="q4">Quantos títulos da Copa Libertadores o Corinthians possui?</label><br>
+                <input type="radio" name="q4" value="errado"> 2<br>
+                <input type="radio" name="q4" value="certo"> 1<br>
+                <input type="radio" name="q4" value="errado"> 0
+            </p>
+            <p>
+                <label for="q5">Qual jogador marcou o gol do título mundial do Corinthians em 2012?</label><br>
+                <input type="radio" name="q5" value="errado">Ronaldo Fenômeno<br>
+                <input type="radio" name="q5" value="errado"> Danilo<br>
+                <input type="radio" name="q5" value="certo"> Paolo Guerrero
+            </p>
+            <button type="button" onclick="checkAnswers()">Verificar Respostas</button>
+        </form>
+      <button class="botao" onclick="cadastrar()">Cadastrar</button>
+    </div>
+  </div>
+</body>
+
+</html>

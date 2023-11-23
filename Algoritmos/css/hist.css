@@ -3,6 +3,11 @@
 body {
     font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     margin: 0px;    
+    background-color: black;
+    padding: 0px;
+    background-position: center;
+    background-size: cover;
+    
 }
 
 .container {
@@ -75,7 +80,6 @@ html{
 .banner {
     height: fit-content;
     padding: 40px ;
-    background-image: url("../imgs/Wallpaper\ Corinthians\ SCCP.jpeg");
     background-size: cover;
     top: 10px;
 }

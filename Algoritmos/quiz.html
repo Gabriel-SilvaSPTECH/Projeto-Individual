@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Nação Alvinegra</title>
+    <link rel="icon" href="imgs/corinthians-100-logo-71E44445D2-seeklogo.com.png">
+    <link rel="stylesheet" href="css/quiz.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #result {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="titulo"><a href="index.html"><img id="logo" src="imgs/Corinthians_Paulista_1916-19.png" alt=""
+                        width="50px">Nação Alvinegra</a> <img id="logo2" src="imgs/download.png" alt=""></h1>
+            <ul class="navbar">
+                <li class="agora">
+                    <a href="index.html">Inicial</a>
+                </li>
+                <li>
+                    <a href="mov.html">Movimento</a>
+                </li>
+                <li>
+                    <a href="hist.html">História</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="cadastro.html">Cadastro</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-quiz">
+            <div id="quiz-container">
+                <h1>Boa Sorte</h1>
+                <form id="quiz-form">
+                    <div class="campo">
+                        <label for="q1">1. Quem foi o primeiro presidente do Corinthians? </label><br>
+                        <input type="radio" name="q1" value="errado">
+                        Claudio Christóvam de Pinho<br>
+                        <input type="radio" name="q1" value="errado">
+                        Alfredo Ignácio Trindade<br>
+                        <input type="radio" name="q1" value="certo">
+                        Miguel Battaglia
+                    </div><br><br>
+                    <div class="campo">
+                        <label for="q2">2. Qual foi o ano de fundação do Corinthians?</label><br>
+                        <input type="radio" name="q2" value="errado"> 1912<br>
+                        <input type="radio" name="q2" value="certo"> 1910<br>
+                        <input type="radio" name="q2" value="errado"> 1915
+                    </div><br><br>
+                    <div class="campo">
+                        <label for="q3">3. Em qual estádio o Corinthians manda seus jogos?</label><br>
+                        <input type="radio" name="q3" value="certo"> Neo Química Arena<br>
+                        <input type="radio" name="q3" value="errado"> Pacaembu<br>
+                        <input type="radio" name="q3" value="errado"> Parque São Jorge
+                    </div><br><br>
+                    <div class="campo">
+                        <label for="q4"> 4. Quantos títulos da Copa Libertadores o Corinthians possui?</label><br>
+                        <input type="radio" name="q4" value="errado"> 2<br>
+                        <input type="radio" name="q4" value="certo"> 1<br>
+                        <input type="radio" name="q4" value="errado"> 0
+                    </div><br><br>
+                    <div class="campo">
+                        <label for="q5">5. Qual jogador marcou o gol do título mundial do Corinthians em
+                            2012?</label><br>
+                        <input type="radio" name="q5" value="errado">Emerson Sheik<br>
+                        <input type="radio" name="q5" value="errado"> Danilo<br>
+                        <input type="radio" name="q5" value="certo"> Paolo Guerrero
+                    </div><br><br>
+                    <div class="campo">
+                        <label for="q6">6. Em qual ano Ronaldo Fenômeno chegou ao Corinthians?</label><br>
+                        <input type="radio" name="q6" value="errado">2008<br>
+                        <input type="radio" name="q6" value="errado">2007<br>
+                        <input type="radio" name="q6" value="certo">2009
+                    </div><br><br>
+                    <div class="campo">
+                        <label for="q7">7. Qual ano foi a inauguração da nova arena do Corithians?</label><br>
+                        <input type="radio" name="q7" value="errado"> 2016<br>
+                        <input type="radio" name="q7" value="certo"> 2014<br>
+                        <input type="radio" name="q7" value="errado"> 2015
+                    </div><br><br>
+                    <div class="campo">
+                        <label for="q8">8. Qual o nome do jogador que mais marcou gols de falta pelo
+                            Corinthians?</label><br>
+                        <input type="radio" name="q8" value="certo">Marcelinho Carioca<br>
+                        <input type="radio" name="q8" value="errado">Craque Neto<br>
+                        <input type="radio" name="q8" value="errado">Chicão
+                    </div><br><br>
+                    <div class="campo">
+                        <label for="q9">9. Contra qual time o Corinthians foi campeão Mundial em 2012?</label><br>
+                        <input type="radio" name="q9" value="errado"> Real Madrid<br>
+                        <input type="radio" name="q9" value="certo"> Chelsea<br>
+                        <input type="radio" name="q9" value="errado"> Vasco da Gama
+                        <div class="campo">
+                        </div><br><br>
+                        <label for="q10">10. Quantas Copas do Brasil tem o Corinthians?</label><br>
+                        <input type="radio" name="q10" value="errado">4<br>
+                        <input type="radio" name="q10" value="errado"> 2<br>
+                        <input type="radio" name="q10" value="certo"> 3
+                    </div><br><br>
+                    <button type="button" onclick="checkAnswers()">Verificar Respostas</button>
+                </form>
+
+                <div id="result">
+                    <h2>Resultado do Quiz</h2>
+                    <p>Você acertou <span id="score"></span> de 10 perguntas!</p>
+                    <button onclick="location.reload()">Tentar Novamente</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        function checkAnswers() {
+            const quizForm = document.getElementById('quiz-form');
+            const userAnswers = new FormData(quizForm);
+            let score = 0;
+
+            for (let entry of userAnswers.entries()) {
+                if (entry[1] === 'certo') {
+                    score++;
+                }
+            }
+
+            document.getElementById('score').textContent = score;
+            document.getElementById('result').style.display = 'block';
+            document.getElementById('quiz-form').style.display = 'none';
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+</body>
+
+</html>
