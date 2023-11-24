@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url("../imgs/Fundo\ de\ tela\ do\ Corinthians_\ O\ Corinthians\ é\ o\ time\ do\ povo.jpeg");
+  background-image: url("../assets/imgs/fundoCorinthians.jpeg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -129,6 +129,7 @@ body {
   border-radius: 50px;
   width: 150px;
   background-color: white;
+  cursor: pointer;
 } 
 
 .banner .container span {

@@ -8,7 +8,7 @@
 
   <title>Fiel Alvinegro | Página Inicial</title>
 
-  <link rel="icon" href="imgs/corinthians-100-logo-71E44445D2-seeklogo.com.png">
+  <link rel="icon" href="assets/imgs/logo.png">
   <link rel="stylesheet" href="./css/cadastro.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <!-- <link
@@ -17,30 +17,31 @@
 </head>
 
 <body>
-  <div class="header">
-    <div class="container">
-      <h1 class="titulo"><a href="index.html"><img id="logo" src="imgs/Corinthians_Paulista_1916-19.png" alt=""
-            width="50px">Fiel Alvinegro</a> <img id="logo2" src="imgs/download.png" alt=""></h1>
-      <ul class="navbar">
-        <li class="agora">
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="mov.html">Movimento</a>
-        </li>
-        <li>
-          <a href="hist.html">História</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="cadastro.html">Cadastro</a>
-        </li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-      </ul>
+  <body>
+    <div class="header">
+      <div class="container">
+        <h1 class="titulo"><a href="index.html"><img id="logo" src="assets/imgs/logo2.png" alt="" width="50px">Fiel Alvinegro</a> <img id="logo2" src="assets/imgs/logo3.png" alt=""></h1>
+        <ul class="navbar">
+          <li class="agora">
+            <a href="index.html">Inicial</a>
+          </li>
+          <li>
+            <a href="mov.html">Movimento</a>
+          </li>
+          <li>
+            <a href="hist.html">História</a>
+          </li>
+          <li>|</li>
+          <li>
+            <a href="cadastro.html">Cadastro</a>
+          </li>
+          <li>
+            <a href="login.html">Login</a>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+
   <div class="banner">
     <div class="card">
       <div class="campo">
@@ -51,6 +52,47 @@
         <span>E-mail:</span>
         <input id="email_input" type="text" placeholder="meuemail@email.com" />
       </div>
+      <!-- <div class="campo">
+        <span>Estado</span>
+        <select id="estado_select" name="estado_select">
+          <option value="" selected>Selecione um estado</option>
+          <option value="Acre">Acre</option>
+          <option value="Alagoas">Alagoas</option>
+          <option value="Amapá">Amapá</option>
+          <option value="Amazonas">Amazonas</option>
+          <option value="Bahia">Bahia</option>
+          <option value="Ceará">Ceará</option>
+          <option value="Distrito Federal">Distrito Federal</option>
+          <option value="Espírito Santo">Espírito Santo</option>
+          <option value="Goiás">Goiás</option>
+          <option value="Maranhão">Maranhão</option>
+          <option value="Mato Grosso">Mato Grosso</option>
+          <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+          <option value="Minas Gerais">Minas Gerais</option>
+          <option value="Pará">Pará</option>
+          <option value="Paraíba">Paraíba</option>
+          <option value="Paraná">Paraná</option>
+          <option value="Pernambuco">Pernambuco</option>
+          <option value="Piauí">Piauí</option>
+          <option value="Rio de Janeiro">Rio de Janeiro</option>
+          <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+          <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+          <option value="Rondônia">Rondônia</option>
+          <option value="Roraima">Roraima</option>
+          <option value="Santa Catarina">Santa Catarina</option>
+          <option value="São Paulo">São Paulo</option>
+          <option value="Sergipe">Sergipe</option>
+          <option value="Tocantins">Tocantins</option>
+        </select>
+      </div> -->
+      <!-- <div class="campo">
+        <span>Cidade</span>
+        <input id="cidade_input" type="text" placeholder="" />
+      </div>
+      <div class="campo">
+        <span>Bairro</span>
+        <input id="bairro_input" type="text" placeholder="" />
+      </div> -->
       <div class="campo">
         <span>Senha:</span>
         <input id="senha_input" type="password" placeholder="******" />
@@ -60,8 +102,113 @@
         <input id="confirmar_senha_input" type="password" placeholder="******" />
       </div>
       <button class="botao" onclick="cadastrar()">Cadastrar</button>
+      <span id="mensagem_erro"></span>
     </div>
   </div>
 </body>
 
 </html>
+<script>
+  function cadastrar() {
+    // aguardar();
+  
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    // var estadoVar = estado_select.value;
+    // var cidadeVar = cidade_input.value;
+    // var bairroVar = bairro_input.value;
+    var senhaVar = senha_input.value;
+
+
+    if (nomeVar.length < 1) {
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML =
+      //   "(Nome precisa ser maior)";
+      // finalizarAguardar();
+      return false;
+    }
+      else if (emailVar.indexOf ('@') < 0 && emailVar.endsWith != '.com' ) {
+      cardErro.style.display = "block";
+      // mensagem_erro.innerHTML =
+      //   "(Preencha o email de forma correta utilizando '@' e '.com')";
+        // finalizarAguardar();
+      return false;
+      } else if (senhaVar < 6) {
+      cardErro.style.display = "block";
+      // mensagem_erro.innerHTML =
+      //   "(Sua senha deve haver mais caracteres)";
+        // finalizarAguardar();
+      return false;
+      }
+      else {
+      // setInterval(sumirMensagem, 5000);
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          // estadoServer: estadoVar,
+          // cidadeServer: cidadeVar,
+          // bairroServer: bairroVar,
+          senhaServer: senhaVar
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+    
+          // if (resposta.ok) {
+          //   cardErro.style.display = "block";
+    
+          //   mensagem_erro.innerHTML =
+          //     "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+          if (resposta.ok) {
+            setTimeout(() => {
+              window.location = "login.html";
+            }, "2000");
+          }
+          //   limparFormulario();
+          //   finalizarAguardar();
+          // }
+           else {
+             throw "Houve um erro ao tentar realizar o cadastro!";
+           }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+          // finalizarAguardar();
+        });
+    
+      }
+      return false;
+  }
+    
+    // function listar() {
+    //   fetch("/email/listar", {
+    //     method: "GET",
+    //   })
+    //     .then(function (resposta) {
+    //       resposta.json().then((email) => {
+    //         email.forEach((usuario) => {
+    //           email_input.innerHTML += `<option value='${usuario.id}'>${usuario.cnpj}</option>`;
+    //         });
+    //       });
+    //     })
+    //     .catch(function (resposta) {
+    //       console.log(`#ERRO: ${resposta}`);
+    //     });
+    // }
+    
+  
+  // Enviando o valor da nova input
+    
+  // function sumirMensagem() {
+  //   cardErro.style.display = "none";
+  // }
+  </script>
