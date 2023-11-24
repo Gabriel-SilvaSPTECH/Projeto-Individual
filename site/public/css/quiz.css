@@ -13,8 +13,8 @@ body {
   flex-direction: column;
   gap: 5px;
   background-color: black;
- 
-  
+
+
 }
 
 .container {
@@ -71,33 +71,37 @@ body {
   font-weight: 500;
 }
 
-.card .card-quiz #quiz-container label{
-    color: black;
-    justify-content: center;
+.card .card-quiz #quiz-container label {
+  color: black;
+  justify-content: center;
 }
 
-.card .card-quiz #quiz-container .campo{
-    color: black;
-    justify-content: center;
-    margin: 20px;
+.card .card-quiz #quiz-container .campo {
+  color: black;
+  justify-content: center;
+  margin: 20px;
 }
 
-.card .card-quiz #quiz-container{
-    width: 350px;
-    background-color: white;
-    filter: blur(px);
-    border-radius: 25px;
+.card .card-quiz #quiz-container {
+  width: 350px;
+  background-color: white;
+  filter: blur(px);
+  border-radius: 25px;
 
 }
 
-.card .card-quiz #quiz-container h1{
-    color: black;
-    margin: 20px;
+.card .card-quiz #quiz-container h1 {
+  color: black;
+  margin: 20px;
 }
 
-.card .card-quiz #quiz-container button{
-    position: relative;
-    left: 80px;
-    margin: 25px;
-    border-radius: 15px;
+.card .card-quiz #quiz-container button {
+  position: relative;
+  left: 80px;
+  margin: 25px;
+  border-radius: 15px;
+}
+
+.card .card-quiz #quiz-container #result {
+  margin: 20px;
 }
