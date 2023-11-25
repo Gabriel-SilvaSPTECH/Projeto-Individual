@@ -123,33 +123,33 @@
                     <h2>Resultado do Quiz</h2>
                     <p>Você acertou <span id="score"></span> de 10 perguntas!</p>
                     <button onclick="location.reload()">Tentar Novamente</button>
+                    <button onclick="direcionar()">Veja Resultados</button>
                 </div>
             </div>
         </div>
     </div>
-
-
-    <script>
-
-        function checkAnswers() {
-            const quizForm = document.getElementById('quiz-form');
-            const userAnswers = new FormData(quizForm);
-            let score = 0;
-
-            for (let entry of userAnswers.entries()) {
-                if (entry[1] === 'certo') {
-                    score++;
-                }
-            }
-
-            document.getElementById('score').textContent = score;
-            document.getElementById('result').style.display = 'block';
-            document.getElementById('quiz-form').style.display = 'none';
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
-
 </body>
-
 </html>
+<script>
+
+    function checkAnswers() {
+        const quizForm = document.getElementById('quiz-form');
+        const userAnswers = new FormData(quizForm);
+        let score = 0;
+
+        for (let entry of userAnswers.entries()) {
+            if (entry[1] === 'certo') {
+                score++;
+            }
+        }
+
+        document.getElementById('score').textContent = score;
+        document.getElementById('result').style.display = 'block';
+        document.getElementById('quiz-form').style.display = 'none';
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    function direcionar(){
+        
+    } 
+</script>
