@@ -3,74 +3,186 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Fiel Alvinegro | Página Inicial</title>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-    <link rel="icon" href="assets/imgs/logo.png">
-    <link rel="stylesheet" href="./css/dash.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet"> -->
+    <title>Dashboard </title>
+    <link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="icon" href="assets/imgs/logo.png" type="image/x-icon">
 </head>
 
 <body>
-
-    <div class="header">
-      <div class="container">
-        <h1 class="titulo"><a href="index.html"><img id="logo" src="assets/imgs/logo2.png" alt="" width="50px">Fiel Alvinegro</a> <img id="logo2" src="assets/imgs/logo3.png" alt=""></h1>
-        <ul class="navbar">
-          <li class="agora">
-            <a href="index.html">Inicial</a>
-          </li>
-          <li>
-            <a href="mov.html">Movimento</a>
-          </li>
-          <li>
-            <a href="hist.html">História</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-        </ul>
-      </div>
+    <div class="container">
+        <div class="topbar">
+            <div class="logo">
+               <a href="index.html"> <img src="assets/imgs/logo2.png"></a>
+            </div>
+            <div class="search">
+                <label for="search"></label> <i class="fas fa-search" id="i"></i>
+            </div>
+            <i class="fa-solid fa-list"></i>
+            <div class="user">
+                <img src="assets/imgs/atual.png" alt="">
+            </div>
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        
+                        <div>Inicio</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        
+                        <div>Usuário</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="quiz.html">
+                        
+                        <div>Quiz</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="cards">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="number"><div id="div_pessoas"></div></div>
+                        <div class="card-name">Pessoas</div>
+                    </div>
+                    <div class="icon-box">
+                        <i class="fas fa-user-graduate" id="i"></i>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="card-content">
+                    
+                    <div class="card-name"></div>
+                    </div>
+              
+                </div>
+            </div>
+            <div class="charts">
+                <div class="chart">
+                    <h2></h2>
+                    <div class="graficos">
+                        <canvas id="myChart2"></canvas>
+                    </div>
+                </div>
+                <div class="chart">
+                    <h2></h2>
+                    <div class="graficos">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
+</body>
 
-    <div>
-      <canvas id="myChart"></canvas>
-    </div>
+</html>
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+    integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+    crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/7b9aff81d8.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
 
-    </html>
+    // Gráfico de Barras - refere-se a quantidade de zonas no shopping
+    //Sugestão de Kpi's = Zona mais lotada, Zona mais Vazia, Média de Pessoas e Total de Pessoas.
+
+    const labels = [
+        'ES',
+        'MG',
+        'RJ',
+        'SP',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Pessoas logadas por estado',
+            data: [320, 229, 500, 423],
+            backgroundColor: '#000',
+            backgroundColor: '#000',
+            borderColor: '#000',
+
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Região Sudeste'
+                }
+            }
+        }
+    };
+
+
+
+    // Gráfico de Pizza - refere-se a ocupação total do shopping
+    //Sugestão de Kpi's = Porcentagem de Ocupação de Pessoas,Porcentagem Ocupação Livre de Pessoas e Total de Pessoas.
+
+
+    const labels2 = [
+        'Masculino',
+        'Feminino',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Porcentagem de gênero',
+            data: [1.217, 2.678],
+            backgroundColor: [
+                'rgb(0, 0, 0, 0)',
+                'rgb(0, 0, 0)'
+            ],
+            borderColor: '#000',
+        }]
+    };
+
+    const config2 = {
+        type: 'pie',
+        data: data2,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Ocupação Atual do Shopping'
+                }
+            }
+        },
+    };
+    // Gráfico de Linhas - refere- se ao movimento de pessoas por hora do dia
+    //Sugestão de Kpi's = Horário de Pico,Horário mais vazio, Média de Pessoas e Total de Pessoas.
+</script>
 
 <script>
-const data = {
-  labels: [
-    'Red',
-    'Blue',
-    'Yellow'
-  ],
-  datasets: [{
-    label: 'My First Dataset',
-    data: [300, 50, 100],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
-    ],
-    hoverOffset: 4
-  }]
-};
-const config = {
-  type: 'pie',
-  data: data,
-};
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
 
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
 </script>

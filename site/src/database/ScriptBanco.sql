@@ -3,16 +3,15 @@ USE FielAlvinegro;
 
 CREATE TABLE endereco (
     idEndereco INT PRIMARY KEY AUTO_INCREMENT,
-    bairro VARCHAR(50),
     cidade VARCHAR(50),
-    estado VARCHAR(50),
-    CEP VARCHAR(10)
+    estado VARCHAR(50)
 );
 
 CREATE TABLE usuario (
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50),
     email VARCHAR(45),
+    sexo VARCHAR(45),
     senha VARCHAR(45),
     fkEndereco INT,
     FOREIGN KEY (fkEndereco) REFERENCES endereco(idEndereco)
@@ -25,7 +24,3 @@ CREATE TABLE quiz (
     fkUsuario INT,
     FOREIGN KEY (fkUsuario) REFERENCES usuario(idUsuario)
 );
-
-use FielAlvinegro;
-
-select * from usuario;

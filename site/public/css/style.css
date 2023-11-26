@@ -67,6 +67,25 @@
     overflow-x: hidden;
   }
 
+.banner .container .cadastro{
+  position: relative;
+  left: 650px;
+}
+
+.banner .container .cadastro button{
+  border-radius: 25px;
+  width: 100px; 
+  text-decoration: none;
+  color: white;
+  margin: 5px;
+}
+
+.banner .container .cadastro button a{
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+}
+
   .banner {
     height: fit-content;
     padding: 100px 0;
