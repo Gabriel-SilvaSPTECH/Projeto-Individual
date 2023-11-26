@@ -10,7 +10,7 @@
 }
 
 body {
-    background: rgb(209, 209, 209);
+    background: fff;
 }
 
 .topbar {
@@ -68,9 +68,9 @@ body {
 
 .sidebar {
     position: fixed;
-    top: 60px;
+    top: -2px;
     width: 260px;
-    height: calc(100% - 60px);
+    height: 2000px;
     background: #000000;
     overflow: x;
 
@@ -100,20 +100,12 @@ body {
     justify-content: center;
 }
 
-.sidebar ul li a #i {
-    min-width: 60px;
-    font-size: 24px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
 
 /* ================================parte principal======================================= */
 
 .main {
     position: absolute;
-    top: 60px;
+    top: 100px;
     width: calc(100% - 260px);
     left: 260px;
     min-height: calc(100vh - 60px);
@@ -156,10 +148,7 @@ body {
     color: #000;
 }
 
-.icon-box #i {
-    font-size: 45px;
-    color: #000;
-}
+
 
 /* ===================================GRÁFICOS======================================== */
 
