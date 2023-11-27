@@ -54,16 +54,24 @@
                 <br><br>
                 Uma das conquistas mais emblemáticas do Corinthians ocorreu em 2000, quando venceu o Campeonato Mundial de Clubes da FIFA, derrotando o Vasco da Gama na final. Esse título foi muito celebrado pela torcida, que viu o clube se tornar campeão mundial pela primeira vez.
                 <br><br>
+                
                 Outro marco significativo na história corintiana foi a inauguração da Arena Corinthians, também conhecida como Itaquerão, em 2014, construída para sediar a Copa do Mundo da FIFA realizada no Brasil. O estádio tornou-se a casa do clube, proporcionando uma estrutura moderna e uma capacidade ampliada para os torcedores.
                 <br><br>
                 Em termos de títulos, o Corinthians possui diversos Campeonatos Paulistas, Campeonatos Brasileiros, além de conquistas internacionais, como a Copa Libertadores da América em 2012 e o bicampeonato do Mundial de Clubes FIFA em 2012, conquistando a taça novamente.
                 <br><br>
                 A Fiel Torcida, como é conhecida a fanática base de torcedores do Corinthians, é um dos pilares do clube, oferecendo um apoio inabalável em todas as circunstâncias, seja nos momentos de glória ou nas dificuldades enfrentadas pela equipe.
                 <br><br>
-                O Corinthians, ao longo de sua história, construiu uma trajetória repleta de momentos memoráveis, conquistando títulos, formando grandes jogadores e se consolidando como um dos clubes mais amados e populares do Brasil e do mundo.</p>
+                O Corinthians, ao longo de sua história, construiu uma trajetória repleta de momentos memoráveis, conquistando títulos, formando grandes jogadores e se consolidando como um dos clubes mais amados e populares do Brasil e do mundo. <br><br>Veja algumas fotos históricas abaixo.</p>
+                
             </section>
         </div>
     </div>
+      
+    <div id="image-container">
+      <img id="random-image" src="" alt="Imagem Aleatória">
+    </div>
+    <button onclick="trocarImagem()">Trocar Imagem</button>
+
     <div class="footer">
         <div class="container">
             <h4>Feito por um fiel torcedor; S.C. Corinthians &copy; 2023</h4>
@@ -73,3 +81,30 @@
 </body>
 
 </html>
+<script>
+  // Lista de URLs de imagens
+  const imagens = [
+    './assets/imgs/primeiro_time_t2.jpg',
+    './assets/imgs/socrates.jpg',
+    './assets/imgs/socrates-brasileiro-sampaio-de-s-v-de-oliveira_0_corinthians.jpg',
+    './assets/imgs/Fábio Santos brinca sobre fama de talismã de Luciano_ _Novo Tupãzinho_.jpeg',
+    './assets/imgs/Corinthians enfrenta Fluminense e relembra 3 anos de jogo contra Vasco.jpeg',
+    './assets/imgs/O ano do Corinthians em dez fotos  - globoesporte_com.jpeg',
+    './assets/imgs/Wallpaper Zé Maria, Corinthians 1x0 Ponte Preta 1979.jpeg',
+  ];
+
+  // Função para gerar um número aleatório dentro do intervalo de índices das imagens
+  function gerarNumeroAleatorio() {
+    return Math.floor(Math.random() * imagens.length);
+  }
+
+  // Função para trocar a imagem exibida
+  function trocarImagem() {
+    const randomIndex = gerarNumeroAleatorio();
+    const imagem = document.getElementById('random-image');
+    imagem.src = imagens[randomIndex];
+  }
+
+  // Exibe uma imagem aleatória inicial ao carregar a página
+  window.onload = trocarImagem;
+</script>

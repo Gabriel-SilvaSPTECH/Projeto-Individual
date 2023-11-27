@@ -99,6 +99,15 @@ section {
     position: relative;
 }
 
+#image-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+#random-image {
+    width: 300px; 
+    height: 200px; 
+  }
 .banner p {
     color: #fff;
     width: 50%;

@@ -141,20 +141,28 @@
     var cidadeVar = cidade_input.value;
     var bairroVar = bairro_input.value;
     var senhaVar = senha_input.value;
+    var confirmarSenhaVar = confirmar_senha_input.value;
+    var validacoes = 0;
 
-    if (nomeVar.length < 1) {
-      alert("Nome precisa de mais letras")
-      return false;
-    }
-      else if (emailVar.indexOf ('@') < 0 && emailVar.endsWith != '.com' ) {
-      alert("Prencha seu email corretamente")
-      return false;
-      } 
-      else if (senhaVar < 6) {
-      alert("Sua senha precisa de mais caracteres")
-      return false;
-      }
-      else {
+    if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmarSenhaVar == "" || bairroVar == "" || cidadeVar == "") {
+            alert(' preencha todos os campos')
+            
+        }if(nomeVar.length > 12){
+            alert('Nome grande demais')
+        }
+        else if(nomeVar.length < 2){
+            alert('Nome pequeno demais')
+        }
+        else if(senhaVar != confirmarSenhaVar){
+            alert("as senhas precisam ser igual")
+        }
+        if(emailVar.indexOf("@") <= -1){
+            alert('Coloque @ no seu email')
+        }
+        else if(emailVar.indexOf(".")== -1){
+            alert('erro:Coloque . no seu email')
+        }
+        else {
       // setInterval(sumirMensagem, 5000);
       fetch("/usuarios/cadastrar", {
         method: "POST",

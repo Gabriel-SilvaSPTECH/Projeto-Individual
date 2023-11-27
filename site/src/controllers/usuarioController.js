@@ -23,7 +23,7 @@ function autenticar(req, res) {
 
 					if (resultadoAutenticar.length > 0) {
 						res.json({
-							idUsuario: resultadoAutenticar[0].id,
+							idUsuario: resultadoAutenticar[0].idUsuario,
 							email: resultadoAutenticar[0].email,
 							nome: resultadoAutenticar[0].nome,
 							senha: resultadoAutenticar[0].senha,
@@ -86,7 +86,16 @@ function cadastrar(req, res) {
     }
 }
 
+function quiz(req, res){
+	var id = req.body.idServer;
+	var acertos = req.body.acertosServer;
+	var erros = req.body.errosServer;
+
+	usuarioModel.cadastrarQuiz(id, acertos, erros)
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+	quiz
 }

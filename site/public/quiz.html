@@ -20,32 +20,35 @@
             display: none;
         }
     </style>
+    
+    <script src="js/sessao.js"></script>
 </head>
 
-<body>
+<body onload="validarSessao()">
     <div class="header">
         <div class="container">
-          <h1 class="titulo"><a href="index.html"><img id="logo" src="assets/imgs/logo2.png" alt="" width="50px">Fiel Alvinegro</a> <img id="logo2" src="assets/imgs/logo3.png" alt=""></h1>
-          <ul class="navbar">
-            <li class="agora">
-              <a href="index.html">Inicial</a>
-            </li>
-            <li>
-              <a href="mov.html">Movimento</a>
-            </li>
-            <li>
-              <a href="hist.html">História</a>
-            </li>
-            <li>|</li>
-            <li>
-              <a href="cadastro.html">Cadastro</a>
-            </li>
-            <li>
-              <a href="login.html">Login</a>
-            </li>
-          </ul>
+            <h1 class="titulo"><a href="index.html"><img id="logo" src="assets/imgs/logo2.png" alt="" width="50px">Fiel
+                    Alvinegro</a> <img id="logo2" src="assets/imgs/logo3.png" alt=""></h1>
+            <ul class="navbar">
+                <li class="agora">
+                    <a href="index.html">Inicial</a>
+                </li>
+                <li>
+                    <a href="mov.html">Movimento</a>
+                </li>
+                <li>
+                    <a href="hist.html">História</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="cadastro.html">Cadastro</a>
+                </li>
+                <li>
+                    <a href="login.html">Login</a>
+                </li>
+            </ul>
         </div>
-      </div>
+    </div>
     <div class="card">
         <div class="card-quiz">
             <div id="quiz-container">
@@ -129,13 +132,15 @@
         </div>
     </div>
 </body>
+
 </html>
 <script>
+    var id = sessionStorage.ID_USUARIO;
+    var score = 0;
 
     function checkAnswers() {
         const quizForm = document.getElementById('quiz-form');
         const userAnswers = new FormData(quizForm);
-        let score = 0;
 
         for (let entry of userAnswers.entries()) {
             if (entry[1] === 'certo') {
@@ -146,13 +151,34 @@
         document.getElementById('score').textContent = score;
         document.getElementById('result').style.display = 'block';
         document.getElementById('quiz-form').style.display = 'none';
-        
+
         window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        fetch("/usuarios/quiz", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/usuario.js
+                    idServer: id,
+                    acertosServer: score,
+                    errosServer: 10-score
+                }),
+            })
+            .then(function (resposta) {
+                    console.log("resposta: ", resposta);
+            })
     }
-    function direcionar(){
+
+
+        
+
+    function direcionar() {
         // Gera o alerta da biblioteca sweet alert
         setTimeout(() => {
-                
+
             window.location = "dash.html";
         }, 3000);
     }

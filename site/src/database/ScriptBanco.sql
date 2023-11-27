@@ -11,7 +11,7 @@ CREATE TABLE usuario (
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(50),
     email VARCHAR(45),
-    sexo VARCHAR(45),
+    genero VARCHAR(45),
     senha VARCHAR(45),
     fkEndereco INT,
     FOREIGN KEY (fkEndereco) REFERENCES endereco(idEndereco)
